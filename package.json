@@ -1,0 +1,13 @@
+{
+  "name": "asier-rodriguez-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio profesional de Asier Rodríguez, desarrollador web junior.",
+  "scripts": {
+    "start": "npx --yes serve . -l 3000",
+    "check": "node scripts/check.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
