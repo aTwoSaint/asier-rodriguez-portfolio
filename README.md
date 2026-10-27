@@ -4,7 +4,7 @@ Portfolio profesional de Asier Rodríguez, desarrollador web junior. Es una web 
 
 ## Qué incluye
 
-- Presentación, perfil y experiencia de prácticas.
+- Presentación, perfil y experiencia de prácticas, en tarjetas tipo bento.
 - Competencias agrupadas por categorías, sin barras de porcentaje.
 - Proyectos, formación e idiomas.
 - Enlaces de contacto (GitHub y LinkedIn).
@@ -14,7 +14,8 @@ Portfolio profesional de Asier Rodríguez, desarrollador web junior. Es una web 
 ```
 index.html          Página única con todas las secciones
 css/styles.css      Estilos (tokens de diseño en :root)
-js/main.js          Partículas del hero y navegación activa (sin dependencias)
+js/main.js          Partículas, scroll suave, parallax, revelado y navegación activa
+js/lenis.min.js     Lenis 1.0.27 (MIT), scroll suave alojado en el proyecto
 fonts/              Playfair Display y Space Grotesk (SIL OFL), alojadas en el proyecto
 favicon.svg         Icono
 scripts/check.mjs   Comprueba enlaces locales, anclas y recursos CSS
@@ -50,6 +51,7 @@ Este proyecto es independiente de [ATWOSAINT](https://atwosaint-web.vercel.app/)
 ## Accesibilidad y rendimiento
 
 - Idioma del documento en español, enlace «Saltar al contenido» y foco de teclado visible.
+- Scroll suave con Lenis y parallax ligero; ambos se desactivan con `prefers-reduced-motion`.
 - Las animaciones respetan `prefers-reduced-motion`; las partículas se detienen fuera de pantalla y con la pestaña oculta.
 - Sin recursos externos: fuentes e iconos van incluidos, así que no hay peticiones a terceros.
 

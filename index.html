@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,29 +18,29 @@
     <link rel="preload" href="fonts/playfair-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/lenis.min.js" defer></script>
     <script src="js/main.js" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main">Saltar al contenido</a>
+    <div class="bg-orbs" aria-hidden="true"><span class="orb orb-a" data-speed="-0.06"></span><span class="orb orb-b" data-speed="-0.12"></span></div>
 
-    <header class="site-header">
-        <a class="wordmark" href="#inicio" aria-label="Asier Rodríguez, inicio">Asier Rodríguez</a>
-        <nav class="site-nav" aria-label="Principal">
-            <ul>
-                <li><a href="#perfil">Perfil</a></li>
-                <li><a href="#experiencia">Experiencia</a></li>
-                <li><a href="#competencias">Competencias</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#formacion">Formación</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="nav" aria-label="Principal">
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#perfil">Perfil</a></li>
+            <li><a href="#experiencia">Experiencia</a></li>
+            <li><a href="#competencias">Competencias</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#formacion">Formación</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
 
     <main id="main">
         <section class="hero" id="inicio" aria-labelledby="hero-title">
             <canvas id="particleCanvas" aria-hidden="true"></canvas>
-            <div class="hero-inner">
+            <div class="hero-inner" data-parallax data-speed="0.18">
                 <h1 id="hero-title">
                     <span class="hero-name">Asier Rodríguez</span>
                     <span class="hero-role">Desarrollador web junior</span>
@@ -49,31 +49,42 @@
                 <p class="hero-focus">Aplicaciones web · SQL y bases de datos</p>
                 <div class="hero-actions">
                     <a class="button button-primary" href="#experiencia">Ver mi experiencia</a>
-                    <a class="button" href="https://github.com/aTwoSaint" target="_blank" rel="noopener noreferrer">
-                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
-                        GitHub
-                        <span class="visually-hidden">(se abre en una pestaña nueva)</span>
-                    </a>
+                    <a class="button" href="https://github.com/aTwoSaint" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg> GitHub<span class="visually-hidden"> (se abre en una pestaña nueva)</span></a>
                 </div>
             </div>
+            <a class="scroll-hint" href="#perfil" aria-label="Ir al perfil"><span></span></a>
         </section>
 
         <section class="block" id="perfil" aria-labelledby="perfil-title">
             <h2 class="block-title" id="perfil-title">Perfil</h2>
-            <div class="block-body">
-                <p class="prose">Técnico Superior en Desarrollo de Aplicaciones Web, con experiencia de prácticas en Bic Graphic desarrollando una aplicación interna con React, Node.js y SQLite. He trabajado en interfaces para gestionar datos, integración con una API y validación de funcionalidades.</p>
-                <p class="prose">Actualmente amplío mi formación en analítica de datos, conocimiento e inteligencia artificial y busco una posición junior de desarrollo web.</p>
+            <div class="bento bento-profile">
+                <article class="card card-lg reveal">
+                    <p class="card-kicker">Quién soy</p>
+                    <p class="prose">Técnico Superior en Desarrollo de Aplicaciones Web, con experiencia de prácticas en Bic Graphic desarrollando una aplicación interna con React, Node.js y SQLite. He trabajado en interfaces para gestionar datos, integración con una API y validación de funcionalidades.</p>
+                    <p class="prose">Actualmente amplío mi formación en analítica de datos, conocimiento e inteligencia artificial y busco una posición junior de desarrollo web.</p>
+                </article>
+                <article class="card reveal">
+                    <p class="card-kicker">Idiomas</p>
+                    <ul class="lang-list">
+                        <li><strong>Español</strong> nativo</li>
+                        <li><strong>Catalán</strong> nativo</li>
+                        <li><strong>Inglés</strong> B2</li>
+                        <li><strong>Japonés</strong> básico</li>
+                    </ul>
+                </article>
+                <article class="card card-accent reveal">
+                    <p class="card-kicker">Busco</p>
+                    <p class="card-big">Mi primera posición como desarrollador web junior</p>
+                </article>
             </div>
         </section>
 
         <section class="block" id="experiencia" aria-labelledby="experiencia-title">
             <h2 class="block-title" id="experiencia-title">Experiencia</h2>
-            <div class="block-body">
-                <article class="entry">
-                    <header class="entry-head">
-                        <h3>Prácticas de desarrollo web</h3>
-                        <p class="entry-meta">Bic Graphic · Octubre de 2024 – Enero de 2025</p>
-                    </header>
+            <div class="bento bento-exp">
+                <article class="card card-lg reveal">
+                    <p class="card-kicker">Bic Graphic · Octubre de 2024 – Enero de 2025</p>
+                    <h3>Prácticas de desarrollo web</h3>
                     <p class="prose">Participé, con la orientación de un responsable, en el desarrollo de una aplicación web interna para consultar y gestionar datos de la empresa. Trabajé en estas partes:</p>
                     <ul class="checklist">
                         <li>Interfaz frontend con <strong>React</strong>.</li>
@@ -83,113 +94,93 @@
                         <li>Operaciones CRUD: añadir, editar y eliminar registros.</li>
                         <li>Pruebas y validaciones con <strong>Mocha</strong> y <strong>Postman</strong>.</li>
                     </ul>
-                    <p class="note">La aplicación es privada, por eso no muestro código, datos ni capturas. Puedo explicar en una entrevista cómo estaba organizada y qué parte desarrollé.</p>
+                </article>
+                <article class="card reveal">
+                    <p class="card-kicker">Tecnologías</p>
+                    <ul class="chips"><li>React</li><li>Node.js</li><li>SQLite</li><li>Mocha</li><li>Postman</li></ul>
+                </article>
+                <article class="card reveal">
+                    <p class="card-kicker">Aplicación privada</p>
+                    <p class="note">Por eso no muestro código, datos ni capturas. Puedo explicar en una entrevista cómo estaba organizada y qué parte desarrollé.</p>
                 </article>
             </div>
         </section>
 
         <section class="block" id="competencias" aria-labelledby="competencias-title">
             <h2 class="block-title" id="competencias-title">Competencias</h2>
-            <div class="block-body">
-                <dl class="skills">
-                    <div class="skill-row">
-                        <dt>Desarrollo web</dt>
-                        <dd><ul><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></dd>
-                    </div>
-                    <div class="skill-row">
-                        <dt>Frontend</dt>
-                        <dd><ul>
-                            <li class="is-applied">React<span class="visually-hidden"> (aplicado en prácticas)</span></li>
-                            <li>Next.js</li>
-                            <li class="is-basic">Vue.js <span class="level">fundamentos</span></li>
-                        </ul></dd>
-                    </div>
-                    <div class="skill-row">
-                        <dt>Backend y APIs</dt>
-                        <dd><ul>
-                            <li class="is-applied">Node.js<span class="visually-hidden"> (aplicado en prácticas)</span></li>
-                            <li>Java</li>
-                            <li class="is-basic">PHP <span class="level">fundamentos</span></li>
-                        </ul></dd>
-                    </div>
-                    <div class="skill-row">
-                        <dt>Bases de datos</dt>
-                        <dd><ul>
-                            <li>SQL</li>
-                            <li class="is-applied">SQLite<span class="visually-hidden"> (aplicado en prácticas)</span></li>
-                            <li>MySQL</li>
-                            <li>PostgreSQL</li>
-                            <li>MongoDB</li>
-                            <li class="is-basic">Oracle <span class="level">fundamentos</span></li>
-                        </ul></dd>
-                    </div>
-                    <div class="skill-row">
-                        <dt>Pruebas y herramientas</dt>
-                        <dd><ul>
-                            <li class="is-applied">Mocha<span class="visually-hidden"> (aplicado en prácticas)</span></li>
-                            <li class="is-applied">Postman<span class="visually-hidden"> (aplicado en prácticas)</span></li>
-                            <li>Git y GitHub</li>
-                        </ul></dd>
-                    </div>
-                </dl>
-                <p class="legend"><span class="legend-dot" aria-hidden="true"></span>Con marca: tecnologías que usé en mis prácticas en Bic Graphic. «Fundamentos»: conocimientos básicos.</p>
+            <div class="bento bento-skills">
+                <article class="card reveal">
+                    <h3 class="card-title">Desarrollo web</h3>
+                    <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+                </article>
+                <article class="card reveal">
+                    <h3 class="card-title">Frontend</h3>
+                    <ul class="chips"><li class="is-applied">React<span class="visually-hidden"> (aplicado en prácticas)</span></li><li>Next.js</li><li class="is-basic">Vue.js <span class="level">fundamentos</span></li></ul>
+                </article>
+                <article class="card reveal">
+                    <h3 class="card-title">Backend y APIs</h3>
+                    <ul class="chips"><li class="is-applied">Node.js<span class="visually-hidden"> (aplicado en prácticas)</span></li><li>Java</li><li class="is-basic">PHP <span class="level">fundamentos</span></li></ul>
+                </article>
+                <article class="card card-wide reveal">
+                    <h3 class="card-title">Bases de datos</h3>
+                    <ul class="chips"><li>SQL</li><li class="is-applied">SQLite<span class="visually-hidden"> (aplicado en prácticas)</span></li><li>MySQL</li><li>PostgreSQL</li><li>MongoDB</li><li class="is-basic">Oracle <span class="level">fundamentos</span></li></ul>
+                </article>
+                <article class="card reveal">
+                    <h3 class="card-title">Pruebas y herramientas</h3>
+                    <ul class="chips"><li class="is-applied">Mocha<span class="visually-hidden"> (aplicado en prácticas)</span></li><li class="is-applied">Postman<span class="visually-hidden"> (aplicado en prácticas)</span></li><li>Git y GitHub</li></ul>
+                </article>
             </div>
+            <p class="legend"><span class="legend-dot" aria-hidden="true"></span>Con marca: tecnologías que usé en mis prácticas en Bic Graphic. «Fundamentos»: conocimientos básicos.</p>
         </section>
 
         <section class="block" id="proyectos" aria-labelledby="proyectos-title">
             <h2 class="block-title" id="proyectos-title">Proyectos</h2>
-            <div class="block-body">
-                <article class="entry">
-                    <header class="entry-head">
-                        <h3>ATWOSAINT</h3>
-                        <p class="entry-meta">Proyecto personal</p>
-                    </header>
+            <div class="bento bento-projects">
+                <article class="card card-lg reveal">
+                    <p class="card-kicker">Proyecto personal</p>
+                    <h3>ATWOSAINT</h3>
                     <p class="prose">Proyecto personal de marca y presencia web con una sección de referencias y funcionalidades de administración conectadas a una base de datos. Desarrollado con asistencia de herramientas de IA.</p>
                     <p class="prose">No lo presento como muestra de mi programación manual: mi experiencia de código propio está en las prácticas y en lo aprendido en DAW.</p>
                     <ul class="links">
                         <li><a href="https://atwosaint-web.vercel.app/" target="_blank" rel="noopener noreferrer">Ver la web<span class="visually-hidden"> (se abre en una pestaña nueva)</span></a></li>
                         <li><a href="https://github.com/aTwoSaint/atwosaint-web" target="_blank" rel="noopener noreferrer">Ver el código en GitHub<span class="visually-hidden"> (se abre en una pestaña nueva)</span></a></li>
                     </ul>
+                </article>
+                <article class="card reveal">
+                    <p class="card-kicker">Stack del proyecto</p>
                     <p class="note">Tecnologías web, base de datos en Neon y despliegue en Vercel.</p>
                 </article>
+                <a class="card card-link reveal" href="https://github.com/aTwoSaint" target="_blank" rel="noopener noreferrer">
+                    <p class="card-kicker">Más código</p>
+                    <p class="card-big">Mi perfil de GitHub →<span class="visually-hidden"> (se abre en una pestaña nueva)</span></p>
+                </a>
             </div>
         </section>
 
         <section class="block" id="formacion" aria-labelledby="formacion-title">
-            <h2 class="block-title" id="formacion-title">Formación e idiomas</h2>
-            <div class="block-body">
-                <ol class="timeline">
-                    <li class="entry">
-                        <h3>Preguntas analíticas, datos, conocimiento e IA</h3>
-                        <p class="entry-meta">En curso</p>
-                    </li>
-                    <li class="entry">
-                        <h3>Técnico Superior en Desarrollo de Aplicaciones Web (DAW)</h3>
-                        <p class="entry-meta">INS Vidal i Barraquer, Tarragona · 2022–2024</p>
-                    </li>
-                    <li class="entry entry-minor">
-                        <h3>Bachillerato de Ciencias y Tecnología</h3>
-                        <p class="entry-meta">INS La Mar de la Frau, Cambrils · 2020–2022</p>
-                    </li>
-                </ol>
-                <h3 class="subhead">Idiomas</h3>
-                <ul class="lang-list">
-                    <li><strong>Español</strong> nativo</li>
-                    <li><strong>Catalán</strong> nativo</li>
-                    <li><strong>Inglés</strong> B2</li>
-                    <li><strong>Japonés</strong> básico</li>
-                </ul>
+            <h2 class="block-title" id="formacion-title">Formación</h2>
+            <div class="bento bento-edu">
+                <article class="card card-lg reveal">
+                    <p class="card-kicker">INS Vidal i Barraquer, Tarragona · 2022–2024</p>
+                    <h3>Técnico Superior en Desarrollo de Aplicaciones Web (DAW)</h3>
+                </article>
+                <article class="card card-accent reveal">
+                    <p class="card-kicker">En curso</p>
+                    <h3>Preguntas analíticas, datos, conocimiento e IA</h3>
+                </article>
+                <article class="card reveal">
+                    <p class="card-kicker">INS La Mar de la Frau, Cambrils · 2020–2022</p>
+                    <h3 class="card-title">Bachillerato de Ciencias y Tecnología</h3>
+                </article>
             </div>
         </section>
 
         <section class="block block-last" id="contacto" aria-labelledby="contacto-title">
             <h2 class="block-title" id="contacto-title">Contacto</h2>
-            <div class="block-body">
-                <p class="prose">Busco una primera posición como desarrollador web junior. Puedes ver mi código en GitHub o escribirme por LinkedIn. Si necesitas mi CV, pídemelo por ahí.</p>
-                <ul class="contact-list">
-                    <li><a class="button button-primary" href="https://github.com/aTwoSaint" target="_blank" rel="noopener noreferrer">GitHub: aTwoSaint<span class="visually-hidden"> (se abre en una pestaña nueva)</span></a></li>
-                    <li><a class="button" href="https://www.linkedin.com/in/asierrodriguezsimona/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (se abre en una pestaña nueva)</span></a></li>
-                </ul>
+            <p class="prose contact-intro">Busco una primera posición como desarrollador web junior. Puedes ver mi código en GitHub o escribirme por LinkedIn. Si necesitas mi CV, pídemelo por ahí.</p>
+            <div class="bento bento-contact">
+                <a class="card card-link social reveal" href="https://github.com/aTwoSaint" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg><span class="social-name">GitHub</span><span class="social-handle">aTwoSaint</span><span class="visually-hidden"> (se abre en una pestaña nueva)</span></a>
+                <a class="card card-link social reveal" href="https://www.linkedin.com/in/asierrodriguezsimona/" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg><span class="social-name">LinkedIn</span><span class="social-handle">Asier Rodríguez</span><span class="visually-hidden"> (se abre en una pestaña nueva)</span></a>
             </div>
         </section>
     </main>
@@ -197,5 +188,6 @@
     <footer class="site-footer">
         <p>© 2026 Asier Rodríguez. Web estática hecha con HTML, CSS y JavaScript.</p>
     </footer>
+    <script>document.documentElement.classList.replace('no-js','js')</script>
 </body>
 </html>

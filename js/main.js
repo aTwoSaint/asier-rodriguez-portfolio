@@ -2,7 +2,8 @@
  * Portfolio · Asier Rodríguez
  * 1) Campo de partículas del hero (se detiene fuera de pantalla y con movimiento reducido).
  * 2) Marca la sección activa en la navegación.
- * Sin dependencias externas.
+ * 3) Scroll suave (Lenis, incluido en js/), parallax ligero y revelado de tarjetas.
+ * Todo respeta prefers-reduced-motion.
  */
 (function () {
     'use strict';
@@ -116,7 +117,7 @@
     }
 
     /* ---------- Navegación: sección activa ---------- */
-    var links = Array.prototype.slice.call(document.querySelectorAll('.site-nav a[href^="#"]'));
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav a[href^="#"]'));
     var sections = links
         .map(function (a) { return document.querySelector(a.getAttribute('href')); })
         .filter(Boolean);
@@ -145,5 +146,67 @@
             var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
             if (atBottom) { setCurrent(sections[sections.length - 1].id); }
         }, { passive: true });
+    }
+
+    /* ---------- Scroll suave, parallax y revelado ---------- */
+    var root = document.documentElement;
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+
+    if (reduceMotion.matches || !('IntersectionObserver' in window)) {
+        cards.forEach(function (c) { c.classList.add('is-visible'); });
+    } else {
+        var revealObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        cards.forEach(function (c, i) {
+            c.style.transitionDelay = ((i % 3) * 80) + 'ms';
+            revealObserver.observe(c);
+        });
+    }
+
+    var lenis = null;
+    if (!reduceMotion.matches && typeof window.Lenis === 'function') {
+        lenis = new window.Lenis({ duration: 1.1, lerp: 0.1, smoothWheel: true });
+        (function raf(time) {
+            lenis.raf(time);
+            window.requestAnimationFrame(raf);
+        })(0);
+    }
+
+    // Anclas: con Lenis se desplaza con suavidad; sin él, lo hace el navegador.
+    Array.prototype.forEach.call(document.querySelectorAll('a[href^="#"]'), function (a) {
+        a.addEventListener('click', function (e) {
+            var target = document.querySelector(a.getAttribute('href'));
+            if (!target || !lenis) { return; }
+            e.preventDefault();
+            lenis.scrollTo(target, { offset: a.getAttribute('href') === '#inicio' ? 0 : -72 });
+            if (history.replaceState) { history.replaceState(null, '', a.getAttribute('href')); }
+            target.setAttribute('tabindex', '-1');
+            target.focus({ preventScroll: true });
+        });
+    });
+
+    // Parallax: [data-parallax] y .orb se desplazan según data-speed.
+    if (!reduceMotion.matches) {
+        var layers = Array.prototype.slice.call(document.querySelectorAll('[data-parallax], .orb'));
+        var ticking = false;
+        var applyParallax = function () {
+            var y = window.scrollY || window.pageYOffset;
+            layers.forEach(function (el) {
+                var speed = parseFloat(el.getAttribute('data-speed')) || 0;
+                var offset = el.hasAttribute('data-parallax') ? Math.min(y, window.innerHeight * 1.2) * speed : y * speed;
+                el.style.transform = 'translate3d(0,' + offset.toFixed(1) + 'px,0)';
+            });
+            ticking = false;
+        };
+        window.addEventListener('scroll', function () {
+            if (!ticking) { ticking = true; window.requestAnimationFrame(applyParallax); }
+        }, { passive: true });
+        applyParallax();
     }
 })();
