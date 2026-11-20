@@ -193,7 +193,6 @@ main, .site-footer { position: relative; z-index: 1; }
     pointer-events: none;
 }
 .hero h1 { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; font-weight: 400; }
-.hero-hi { margin-bottom: 0.6rem; font-family: var(--font-display); font-size: clamp(1.1rem, 2.6vw, 1.6rem); font-weight: 600; color: var(--blue-light); }
 .hero-name {
     font-family: var(--font-display);
     font-size: clamp(3rem, 10vw, 7.4rem);
@@ -201,7 +200,7 @@ main, .site-footer { position: relative; z-index: 1; }
     line-height: 1;
     letter-spacing: -0.035em;
     padding-bottom: 0.08em;
-    background: linear-gradient(100deg, #fff 10%, #c9b6ff 55%, #7fb4ff 100%);
+    background: linear-gradient(100deg, #fff 10%, #d4c4ff 50%, #a98bff 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -258,6 +257,8 @@ main, .site-footer { position: relative; z-index: 1; }
 .card-wide { grid-column: span 2; }
 .card-full { grid-column: 1 / -1; }
 .card-accent { background: linear-gradient(160deg, rgba(123,74,255,.35), rgba(123,74,255,.08)); border-color: rgba(169,139,255,.4); }
+.card-blue { background: linear-gradient(160deg, #2c5cb8, #1a3f8c); border-color: #5493ce; }
+.card-blue .card-kicker, .card-blue .note { color: #f3efff; }
 .card-link { cursor: pointer; }
 .card-kicker { color: var(--violet-strong); font-size: .82rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
 .card-big { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.3rem, 2.4vw, 1.75rem); line-height: 1.25; }
@@ -270,7 +271,6 @@ main, .site-footer { position: relative; z-index: 1; }
 
 .prose { max-width: 62ch; }
 .note { color: var(--muted); font-size: .98rem; }
-.contact-intro { margin: 0 auto 2rem; text-align: center; }
 
 .checklist { display: grid; gap: .55rem; }
 .checklist li { position: relative; padding-left: 1.4rem; }
@@ -326,8 +326,7 @@ main, .site-footer { position: relative; z-index: 1; }
 /* Movimiento ------------------------------------------------------------- */
 
 @media (prefers-reduced-motion: no-preference) {
-    .hero-hi, .hero-name, .hero-role, .hero-lead, .hero-focus, .hero-actions { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
-    .hero-hi { animation-delay: 0s; }
+    .hero-name, .hero-role, .hero-lead, .hero-focus, .hero-actions { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
     .hero-role { animation-delay: .12s; }
     .hero-lead { animation-delay: .26s; }
     .hero-focus { animation-delay: .36s; }

@@ -43,7 +43,6 @@
         <section class="hero" id="inicio" aria-labelledby="hero-title">
             <canvas id="particleCanvas" aria-hidden="true"></canvas>
             <div class="hero-inner" data-parallax data-speed="0.18">
-                <p class="hero-hi">¡Hola! Soy</p>
                 <h1 id="hero-title">
                     <span class="hero-name">Asier Rodríguez</span>
                     <span class="hero-role">Desarrollador web junior</span>
@@ -112,7 +111,7 @@
             <div class="bento bento-skills">
                 <article class="card reveal">
                     <h3 class="card-title">Desarrollo web</h3>
-                    <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+                    <ul class="chips"><li>HTML</li><li>CSS</li><li class="is-applied">JavaScript<span class="visually-hidden"> (aplicado en prácticas)</span></li></ul>
                 </article>
                 <article class="card reveal">
                     <h3 class="card-title">Frontend</h3>
@@ -138,6 +137,20 @@
             <h2 class="block-title" id="proyectos-title">Proyectos</h2>
             <div class="bento bento-projects">
                 <article class="card card-lg reveal">
+                    <p class="card-kicker">Proyecto personal · en desarrollo</p>
+                    <h3>Monitor Industrial</h3>
+                    <p class="prose">Permite probar una vista de supervisión industrial sin conectar máquinas reales: simula la telemetría de cuatro equipos, detecta umbrales de temperatura, presión y vibración, y presenta estados y alertas en un dashboard local.</p>
+                    <p class="prose">Lo estoy desarrollando yo, por fases: API local con Node.js, dashboard adaptable con métricas y controles, alerta de temperatura mantenida durante varios segundos, pruebas unitarias y persistencia del histórico en SQLite.</p>
+                    <p class="note">Los datos son sintéticos: no hay conexión con sensores reales.</p>
+                    <ul class="links">
+                        <li><a href="https://github.com/aTwoSaint/Monitor-Industrial" target="_blank" rel="noopener noreferrer">Ver el código en GitHub<span class="visually-hidden"> (se abre en una pestaña nueva)</span></a></li>
+                    </ul>
+                </article>
+                <article class="card reveal">
+                    <p class="card-kicker">Tecnologías</p>
+                    <ul class="chips"><li>Node.js</li><li>JavaScript</li><li>HTML</li><li>CSS</li><li>SQLite</li><li>Pruebas unitarias</li></ul>
+                </article>
+                <article class="card card-lg reveal">
                     <p class="card-kicker">Proyecto digital personal</p>
                     <h3>aTwoSaint</h3>
                     <p class="prose">Proyecto personal de marca digital con una web pública, una sección de referencias y un panel de administración conectado a una base de datos. La implementación técnica se realizó con asistencia de herramientas de IA.</p>
@@ -151,7 +164,7 @@
                     <p class="card-kicker">Stack del proyecto</p>
                     <p class="note">Tecnologías web, base de datos en Neon y despliegue en Vercel.</p>
                 </article>
-                <a class="card card-link reveal" href="https://github.com/aTwoSaint" target="_blank" rel="noopener noreferrer">
+                <a class="card card-link card-full reveal" href="https://github.com/aTwoSaint" target="_blank" rel="noopener noreferrer">
                     <p class="card-kicker">Más código</p>
                     <p class="card-big">Mi perfil de GitHub →<span class="visually-hidden"> (se abre en una pestaña nueva)</span></p>
                 </a>
@@ -165,7 +178,7 @@
                     <p class="card-kicker">INS Vidal i Barraquer, Tarragona · 2022–2025</p>
                     <h3>CFGS en Desarrollo de Aplicaciones Web (DAW)</h3>
                 </article>
-                <article class="card card-accent reveal">
+                <article class="card card-blue reveal">
                     <p class="card-kicker">2026 – Actualidad · UOC (online)</p>
                     <h3>Preguntas analíticas, datos, conocimiento e IA</h3>
                     <p class="note">Universitat Oberta de Catalunya</p>
@@ -179,7 +192,6 @@
 
         <section class="block block-last" id="contacto" aria-labelledby="contacto-title">
             <h2 class="block-title" id="contacto-title">Contacto</h2>
-            <p class="prose contact-intro">¿Hablamos? Busco una oportunidad como desarrollador web junior. Estoy en Tarragona y puedes escribirme por email o LinkedIn, o mirar mi código en GitHub.</p>
             <div class="bento bento-contact">
                 <a class="card card-link social reveal" href="mailto:asierrodriguezsimona@gmail.com"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3 5.5h18v13H3z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="m3.5 6.5 8.5 7 8.5-7"/></svg><span class="social-name">Email</span><span class="social-handle">asierrodriguezsimona@gmail.com</span></a>
                 <a class="card card-link social reveal" href="https://github.com/aTwoSaint" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg><span class="social-name">GitHub</span><span class="social-handle">atwosaint</span><span class="visually-hidden"> (se abre en una pestaña nueva)</span></a>
