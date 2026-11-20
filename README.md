@@ -16,7 +16,7 @@ index.html          Página única con todas las secciones
 css/styles.css      Estilos (tokens de diseño en :root)
 js/main.js          Partículas, scroll suave, parallax, revelado y navegación activa
 js/lenis.min.js     Lenis 1.0.27 (MIT), scroll suave alojado en el proyecto
-fonts/              Playfair Display y Space Grotesk (SIL OFL), alojadas en el proyecto
+fonts/              Bricolage Grotesque y Space Grotesk (SIL OFL), alojadas en el proyecto
 favicon.svg         Icono
 scripts/check.mjs   Comprueba enlaces locales, anclas y recursos CSS
 vercel.json         Configuración de despliegue y cabeceras
@@ -40,7 +40,11 @@ Para comprobar enlaces y anclas:
 npm run check
 ```
 
-## Despliegue en Vercel
+## Despliegue
+
+La web está pensada para publicarse en `https://atwosaint.github.io/asier-rodriguez-portfolio/` (GitHub Pages: *Settings → Pages → Deploy from a branch → main / root*). Todas las rutas son relativas, así que funciona en esa subruta.
+
+### Alternativa: Vercel
 
 1. En Vercel, crea un proyecto nuevo (**Add New… → Project**) e importa este repositorio.
 2. Deja **Framework Preset** en *Other*, sin comando de build ni directorio de salida (ya está en `vercel.json`).
@@ -61,4 +65,4 @@ Todo el texto está en `index.html`. Colores y tipografías están en las variab
 
 ## Tipografías
 
-Playfair Display y Space Grotesk, con licencia SIL Open Font License 1.1 (copias en `fonts/`).
+Bricolage Grotesque y Space Grotesk, con licencia SIL Open Font License 1.1 (copias en `fonts/`).

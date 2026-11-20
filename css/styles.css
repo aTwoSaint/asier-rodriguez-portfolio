@@ -4,18 +4,10 @@
    ========================================================================== */
 
 @font-face {
-    font-family: "Playfair Display";
-    src: url("../fonts/playfair-display-latin-wght-normal.woff2") format("woff2");
-    font-weight: 400 900;
+    font-family: "Bricolage Grotesque";
+    src: url("../fonts/bricolage-grotesque-latin-wght-normal.woff2") format("woff2");
+    font-weight: 200 800;
     font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Playfair Display";
-    src: url("../fonts/playfair-display-latin-wght-italic.woff2") format("woff2");
-    font-weight: 400 900;
-    font-style: italic;
     font-display: swap;
 }
 
@@ -32,12 +24,14 @@
     --ink-raised: #0f0a1f;
     --line: rgba(190, 170, 255, 0.2);
     --text: #efeaf9;
-    --muted: #b9b0d0;
+    --muted: #d0cae4;
     --violet: #a98bff;
-    --violet-strong: #c9b6ff;
+    --violet-strong: #ddd2ff;
     --focus: #f4b6cf;
 
-    --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+    --font-display: "Bricolage Grotesque", "Space Grotesk", system-ui, sans-serif;
+    --blue: #254e9e;
+    --blue-light: #5493ce;
     --font-body: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
 
     --gutter: clamp(1.25rem, 5vw, 4rem);
@@ -61,7 +55,11 @@ html {
 
 body {
     margin: 0;
-    background: radial-gradient(circle at top center, #1a0b33 0%, #07040f 45%, #000 100%) fixed;
+    background:
+        radial-gradient(60rem 40rem at 50% 0, rgba(60, 28, 120, 0.55), transparent 70%),
+        linear-gradient(180deg, #07040f 0%, #080817 28%, #0c1a45 62%, #17387f 85%, #254e9e 100%);
+    background-repeat: no-repeat;
+    background-color: #254e9e;
     color: var(--text);
     overflow-x: hidden;
     font-family: var(--font-body);
@@ -134,7 +132,7 @@ html.lenis, html.lenis body { height: auto; }
 .bg-orbs { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
 .orb { position: absolute; border-radius: 50%; filter: blur(60px); will-change: transform; }
 .orb-a { width: 38rem; height: 38rem; top: 30vh; right: -12rem; background: radial-gradient(circle, rgba(123,74,255,.22), transparent 70%); }
-.orb-b { width: 32rem; height: 32rem; top: 120vh; left: -10rem; background: radial-gradient(circle, rgba(201,120,200,.12), transparent 70%); }
+.orb-b { width: 32rem; height: 32rem; top: 120vh; left: -10rem; background: radial-gradient(circle, rgba(84,147,206,.22), transparent 70%); }
 main, .site-footer { position: relative; z-index: 1; }
 
 /* Navegación (píldora de cristal, como en el portfolio antiguo) ---------- */
@@ -195,19 +193,20 @@ main, .site-footer { position: relative; z-index: 1; }
     pointer-events: none;
 }
 .hero h1 { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; font-weight: 400; }
+.hero-hi { margin-bottom: 0.6rem; font-family: var(--font-display); font-size: clamp(1.1rem, 2.6vw, 1.6rem); font-weight: 600; color: var(--blue-light); }
 .hero-name {
     font-family: var(--font-display);
-    font-size: clamp(2.8rem, 9vw, 6.5rem);
-    font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
+    font-size: clamp(3rem, 10vw, 7.4rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.035em;
     padding-bottom: 0.08em;
-    background: linear-gradient(to right, #fff, #a98bff);
+    background: linear-gradient(100deg, #fff 10%, #c9b6ff 55%, #7fb4ff 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.hero-role { font-family: var(--font-display); font-style: italic; font-size: clamp(1.3rem, 3.4vw, 2.2rem); color: var(--violet-strong); }
+.hero-role { display: inline-block; margin-top: 0.4rem; padding: 0.25rem 1rem; border: 1px solid rgba(255,255,255,.22); border-radius: 999px; background: rgba(84,147,206,.16); font-family: var(--font-display); font-size: clamp(1.05rem, 2.6vw, 1.5rem); font-weight: 600; color: #fff; }
 .hero-lead { max-width: 36ch; margin: 1.8rem auto 0; font-size: clamp(1.1rem, 2.2vw, 1.35rem); line-height: 1.5; }
 .hero-focus { margin-top: 0.7rem; color: var(--muted); }
 .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.9rem; margin-top: 2.2rem; }
@@ -257,16 +256,17 @@ main, .site-footer { position: relative; z-index: 1; }
 .card:hover { transform: translateY(-6px); border-color: rgba(255,255,255,.22); box-shadow: 0 14px 34px rgba(0,0,0,.35); }
 .card-lg { grid-column: span 2; }
 .card-wide { grid-column: span 2; }
+.card-full { grid-column: 1 / -1; }
 .card-accent { background: linear-gradient(160deg, rgba(123,74,255,.35), rgba(123,74,255,.08)); border-color: rgba(169,139,255,.4); }
 .card-link { cursor: pointer; }
 .card-kicker { color: var(--violet-strong); font-size: .82rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
-.card-big { font-family: var(--font-display); font-size: clamp(1.3rem, 2.4vw, 1.75rem); line-height: 1.25; }
+.card-big { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.3rem, 2.4vw, 1.75rem); line-height: 1.25; }
 .card h3 { font-family: var(--font-display); font-size: clamp(1.3rem, 2.4vw, 1.7rem); font-weight: 700; line-height: 1.25; }
 .card h3.card-title { font-size: 1.2rem; }
 
 .bento-profile .card-lg { grid-row: span 2; }
 .bento-exp .card-lg { grid-row: span 2; }
-.bento-contact { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 44rem; margin: 0 auto; }
+.bento-contact { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 64rem; margin: 0 auto; }
 
 .prose { max-width: 62ch; }
 .note { color: var(--muted); font-size: .98rem; }
@@ -293,7 +293,7 @@ main, .site-footer { position: relative; z-index: 1; }
 .social { align-items: center; text-align: center; gap: .5rem; padding-block: 2.2rem; }
 .social .icon { width: 3.2rem; height: 3.2rem; }
 .social-name { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; }
-.social-handle { color: var(--muted); }
+.social-handle { color: var(--muted); font-size: .88rem; overflow-wrap: anywhere; }
 .social:hover .icon { color: var(--violet); }
 
 .site-footer { padding: 2rem var(--gutter) 3rem; color: var(--muted); font-size: .9rem; text-align: center; }
@@ -309,12 +309,16 @@ main, .site-footer { position: relative; z-index: 1; }
 @media (max-width: 62rem) {
     .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .card-lg, .card-wide { grid-column: span 2; }
+.card-full { grid-column: 1 / -1; }
     .bento-profile .card-lg, .bento-exp .card-lg { grid-row: auto; }
+}
+@media (max-width: 48rem) {
+    .bento-contact { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 40rem) {
     :root { --header-h: 4.5rem; }
     .bento, .bento-contact { grid-template-columns: minmax(0, 1fr); }
-    .card-lg, .card-wide { grid-column: auto; }
+    .card-lg, .card-wide, .card-full { grid-column: auto; }
     .nav { padding-inline: 1rem; }
     .nav ul { gap: 1.1rem; }
 }
@@ -322,7 +326,8 @@ main, .site-footer { position: relative; z-index: 1; }
 /* Movimiento ------------------------------------------------------------- */
 
 @media (prefers-reduced-motion: no-preference) {
-    .hero-name, .hero-role, .hero-lead, .hero-focus, .hero-actions { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+    .hero-hi, .hero-name, .hero-role, .hero-lead, .hero-focus, .hero-actions { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+    .hero-hi { animation-delay: 0s; }
     .hero-role { animation-delay: .12s; }
     .hero-lead { animation-delay: .26s; }
     .hero-focus { animation-delay: .36s; }
