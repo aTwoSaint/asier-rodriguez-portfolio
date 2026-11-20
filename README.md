@@ -1,68 +1,73 @@
-# Portfolio de Asier Rodríguez
+# Mi portfolio
 
-Portfolio profesional de Asier Rodríguez, desarrollador web junior. Es una web estática hecha con HTML, CSS y JavaScript, sin framework ni paso de compilación.
+Hola, soy Asier. Esta es mi web de portfolio: un sitio sencillo donde cuento quién soy, qué he hecho en mis prácticas, qué tecnologías conozco y en qué proyectos estoy metido. Busco mi primera oportunidad como desarrollador web junior.
 
-## Qué incluye
+Puedes verla aquí: https://atwosaint.github.io/asier-rodriguez-portfolio/
 
-- Presentación, perfil y experiencia de prácticas, en tarjetas tipo bento.
-- Competencias agrupadas por categorías, sin barras de porcentaje.
-- Proyectos, formación e idiomas.
-- Enlaces de contacto (GitHub y LinkedIn).
+## Cómo está hecha
 
-## Estructura
+Es una web estática: solo HTML, CSS y JavaScript, sin frameworks y sin paso de compilación. No me hacía falta nada más, y así es fácil de abrir, tocar y desplegar.
+
+Lo que tiene:
+
+- Una cabecera con partículas y un menú flotante.
+- Las secciones (perfil, experiencia, competencias, proyectos, formación y contacto) en tarjetas tipo bento.
+- Scroll suave y un efecto parallax ligero.
+- Las competencias agrupadas por categorías, sin barras de porcentaje: prefiero marcar lo que usé de verdad en mis prácticas que inventarme niveles.
+
+## Qué hay en cada carpeta
 
 ```
-index.html          Página única con todas las secciones
-css/styles.css      Estilos (tokens de diseño en :root)
-js/main.js          Partículas, scroll suave, parallax, revelado y navegación activa
-js/lenis.min.js     Lenis 1.0.27 (MIT), scroll suave alojado en el proyecto
-fonts/              Bricolage Grotesque y Space Grotesk (SIL OFL), alojadas en el proyecto
-favicon.svg         Icono
-scripts/check.mjs   Comprueba enlaces locales, anclas y recursos CSS
-vercel.json         Configuración de despliegue y cabeceras
+index.html          La página, con todo el contenido
+css/styles.css      Los estilos (colores y fuentes en variables al principio)
+js/main.js          Partículas, scroll suave, parallax y animaciones al hacer scroll
+js/lenis.min.js     Lenis 1.0.27 (MIT), la librería del scroll suave
+fonts/              Las tipografías, con sus licencias
+favicon.svg         El icono de la pestaña
+scripts/check.mjs   Un script que comprueba que no haya enlaces rotos
+vercel.json         Configuración por si la despliego en Vercel
 ```
 
-## Ejecutarlo en local
+## Probarla en tu ordenador
 
-Necesitas cualquier servidor de archivos estáticos. Por ejemplo:
+Con cualquier servidor de archivos estáticos vale. Por ejemplo:
 
 ```bash
 python3 -m http.server 8000
-# o, con Node.js:
+# o, si tienes Node.js:
 npm start
 ```
 
-Abre http://localhost:8000 (o el puerto que indique el comando).
+Luego abre http://localhost:8000 (o el puerto que te diga el comando).
 
-Para comprobar enlaces y anclas:
+Si quieres comprobar que los enlaces y las anclas funcionan:
 
 ```bash
 npm run check
 ```
 
-## Despliegue
+## Cómo se publica
 
-La web está pensada para publicarse en `https://atwosaint.github.io/asier-rodriguez-portfolio/` (GitHub Pages: *Settings → Pages → Deploy from a branch → main / root*). Todas las rutas son relativas, así que funciona en esa subruta.
+Está en GitHub Pages: *Settings → Pages → Deploy from a branch → main / root*. Cada vez que hago `git push` a `main`, la web se actualiza sola en uno o dos minutos. Todas las rutas son relativas, así que funciona sin problema dentro de la subruta `/asier-rodriguez-portfolio/`.
 
-### Alternativa: Vercel
+También se puede desplegar en Vercel: importa el repositorio, deja el framework en *Other* y sin comando de build (ya está todo en `vercel.json`).
 
-1. En Vercel, crea un proyecto nuevo (**Add New… → Project**) e importa este repositorio.
-2. Deja **Framework Preset** en *Other*, sin comando de build ni directorio de salida (ya está en `vercel.json`).
-3. Despliega. Cada `git push` a `main` publica una nueva versión; las ramas generan despliegues de vista previa.
-
-Este proyecto es independiente de [ATWOSAINT](https://atwosaint-web.vercel.app/): tiene su propio repositorio y su propio proyecto en Vercel.
+Este portfolio es independiente de [aTwoSaint](https://atwosaint-web.vercel.app/), mi proyecto digital personal: tiene su propio repositorio y su propio despliegue.
 
 ## Accesibilidad y rendimiento
 
-- Idioma del documento en español, enlace «Saltar al contenido» y foco de teclado visible.
-- Scroll suave con Lenis y parallax ligero; ambos se desactivan con `prefers-reduced-motion`.
-- Las animaciones respetan `prefers-reduced-motion`; las partículas se detienen fuera de pantalla y con la pestaña oculta.
-- Sin recursos externos: fuentes e iconos van incluidos, así que no hay peticiones a terceros.
+Intento que se pueda usar bien con teclado, lector de pantalla y en el móvil:
 
-## Cómo editar el contenido
+- La web está en español y tiene un enlace para saltar directamente al contenido.
+- El foco del teclado se ve siempre.
+- Si tienes activada la opción de reducir movimiento, se desactivan el scroll suave, el parallax y las animaciones.
+- Las partículas se paran cuando no se ven, para no gastar batería.
+- No carga nada de terceros: las fuentes y los iconos van dentro del proyecto.
 
-Todo el texto está en `index.html`. Colores y tipografías están en las variables de `:root` de `css/styles.css`.
+## Si quieres cambiar algo
+
+El texto está todo en `index.html`. Los colores y las fuentes están en las variables de `:root`, al principio de `css/styles.css`.
 
 ## Tipografías
 
-Bricolage Grotesque y Space Grotesk, con licencia SIL Open Font License 1.1 (copias en `fonts/`).
+Bricolage Grotesque y Space Grotesk, las dos con licencia SIL Open Font License 1.1 (las copias están en `fonts/`).
